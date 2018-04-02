@@ -1,4 +1,4 @@
-{% set version = "2.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: jsonfield
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz
-  sha256: beb1cd4850d6d6351c32daefcb826c01757744e9c863228a642f87a1a4acb834
+  sha256: 7e7f73a675c518712badd783279e26d164140f3fc2ed7a32102c3d08a6a2a4a7
 
 build:
   number: 0
@@ -28,7 +28,7 @@ test:
 about:
   home: https://github.com/dmkoch/django-jsonfield/
   license: MIT
-  license_file: LICENSE
+  # license_file: LICENSE
   summary: 'A reusable Django field that allows you to store validated JSON in your model.'
   license_family: MIT
 
