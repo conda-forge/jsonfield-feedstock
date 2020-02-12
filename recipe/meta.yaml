@@ -1,4 +1,4 @@
-{% set version = "2.0.2" %}
+{% set version = "2.1.1" %}
 
 package:
   name: jsonfield
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz
-  sha256: beb1cd4850d6d6351c32daefcb826c01757744e9c863228a642f87a1a4acb834
+  sha256: ed7c5e1829e9453e24a8bebef1e702ffe402e6def6b326f0e0b88764c59a6dc7
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
