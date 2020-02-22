@@ -15,12 +15,11 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - django >=1.11
-    - six
 
 test:
   requires:
