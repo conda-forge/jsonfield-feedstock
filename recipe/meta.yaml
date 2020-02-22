@@ -1,4 +1,4 @@
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: jsonfield
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz
-  sha256: 1a17efe9a26850e9175900cb37cf30c6182fc2251989f8af44ef47fbbf48eaff
+  sha256: 7e4e84597de21eeaeeaaa7cc5da08c61c48a9b64d0c446b2d71255d01812887a
 
 build:
   number: 0
@@ -15,14 +15,17 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - django >=1.11
-    - six
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - jsonfield
 
