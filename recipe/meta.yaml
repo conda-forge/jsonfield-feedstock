@@ -5,25 +5,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz
   sha256: 7e4e84597de21eeaeeaaa7cc5da08c61c48a9b64d0c446b2d71255d01812887a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
-  build:
-    - python >=3.6
+  host:
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - django >=1.11
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
   imports:
