@@ -1,26 +1,29 @@
+{% set python_min = "3.10" %}
+
+{% set name = "jsonfield" %}
 {% set version = "3.2.0" %}
 
 package:
-  name: jsonfield
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/j/jsonfield/jsonfield-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jsonfield-{{ version }}.tar.gz
   sha256: ca53871bc3308ae4f4cddc3b4f99ed5c6fc6abb1832fbfb499bc6da566c70e4a
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
-    - setuptools
+    - setuptools >=77
     - pip
   run:
     - python >={{ python_min }}
-    - django >=1.11
+    - django >=4.2
 
 test:
   requires:
